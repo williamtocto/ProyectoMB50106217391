@@ -55,7 +55,6 @@ public class PantalonController {
         pantalonActual.setCosto(p.getCosto());
         pantalonActual.setCosto_total(p.getCantidad()*p.getCosto());
         pantalonActual.setOrigen(p.getOrigen());
-
         return pantalonService.save(pantalonActual);
 
     }
