@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.ArrayList;
 
 public interface Equipos_gpsRepository extends JpaRepository<Equipos_gps, Integer> {
-    //ArrayList<Equipos_gps> findById(Integer id);
+    ArrayList<Equipos_gps> findByImei(Integer id);
 }

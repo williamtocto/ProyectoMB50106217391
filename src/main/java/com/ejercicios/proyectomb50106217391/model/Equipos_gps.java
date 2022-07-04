@@ -29,7 +29,7 @@ public class Equipos_gps implements Serializable {
     private String serie;
 
     @Column(name = "costo")
-    private Integer costo;
+    private Double costo;
 
     @Column(name = "observacion")
     private String observacion;
@@ -74,11 +74,11 @@ public class Equipos_gps implements Serializable {
         this.serie = serie;
     }
 
-    public Integer getCosto() {
+    public Double getCosto() {
         return costo;
     }
 
-    public void setCosto(Integer costo) {
+    public void setCosto(Double costo) {
         this.costo = costo;
     }
 
