@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -57,5 +58,22 @@ public class PantalonController {
         pantalonActual.setOrigen(p.getOrigen());
         return pantalonService.save(pantalonActual);
 
+    }
+
+    @GetMapping("/codigo/{codigo}")//id de aki
+    public ArrayList<Pantalon> categorias(@PathVariable String codigo) {
+
+        // Obtener una lista mediante el codigo
+        ArrayList<Pantalon> lista= pantalonService.findByCodigo(codigo);
+
+        // Creo un objeto de tipo casa al cual le asigno el valor
+        Pantalon pantalonActual = pantalonService.findById(lista.get(0).getId());
+        pantalonActual.setCosto_total(pantalonActual.getCantidad()*pantalonActual.getCosto());
+        pantalonService.save(pantalonActual);
+
+        //actulizar mi lista
+        lista.stream().forEach(c-> c.setCosto_total(pantalonActual.getCosto_total()));
+
+        return lista;
     }
 }

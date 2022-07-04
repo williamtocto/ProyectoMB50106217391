@@ -7,6 +7,6 @@ import java.util.ArrayList;
 
 public interface PantalonRepository extends JpaRepository<Pantalon, Integer> {
 
-    ArrayList<Pantalon> findById(String codigo);
+    ArrayList<Pantalon> findByCodigo(String codigo);
 
 }

@@ -13,7 +13,6 @@ public interface PantalonService {
     public Pantalon findById(Integer id);
     public List<Pantalon> findByAll();
     public void eliminar(Integer id);
-
-    //ArrayList<Zapato> findById(Pantalon Id);
+    ArrayList<Pantalon> findByCodigo(String codigo);
 
 }
